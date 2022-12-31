@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: deployment
+metadata: 
+  name: backend-springboot-gradle-deployment
+  app: backend-springboot-gradle
+spec: 
+  replicas: 3
+  selector:
+   matchlabels:
+    labels:
+	 app: backend-springboot-gradle
+   template: 
+     metadata:
+	  labels:
+	   app: backend-springboot-gradle
+	  spec:
+	   containers:
+	    - name: backend-springboot-gradle-ctr
+		  image: backend-springboot-gradle-jar:2
+		  ports:
+		   - containerport: 8080
