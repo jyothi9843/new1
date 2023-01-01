@@ -3,11 +3,11 @@ kind: service
 metadata:
    name: backend-svc
    labels:
-     app: backend-springboot
+     app: backend-springboot-gradle
 spec:
   type: nodeport
   ports:
    - port: 8080
      protocol: TCP
   selector:
-     app: backend-springboot
+     app: backend-springboot-gradle
